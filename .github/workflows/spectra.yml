@@ -1,0 +1,16 @@
+name: Spectra Analysis
+on: [push]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    name: Spectra
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Spectra
+        id: spectra
+        uses: spark63/Spectra@v1.0.5
